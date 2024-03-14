@@ -16,12 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from calculator.views import omlet_menu, pasta_menu, buter_menu
+from calculator.views import get_dish_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('omlet/', omlet_menu),
-    path('pasta/', pasta_menu),
-    path('buter/', buter_menu),
+    path('<dish>/', get_dish_view, name='dish'),
 
 ]
